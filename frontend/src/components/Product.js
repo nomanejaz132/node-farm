@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ProductCard = ({ item }) => {
+const Product = ({ item }) => {
   console.log(item);
   return (
     <figure className="card">
@@ -17,14 +17,14 @@ const ProductCard = ({ item }) => {
         )}
 
         <div className="card__detail-box">
-          <h6 className="card__detail">{item.quantity} 📦</h6>
+          <h6 className="card__detail">{item.quantity} per 📦</h6>
         </div>
 
         <div className="card__detail-box">
           <h6 className="card__detail card__detail--price">{item.price} €</h6>
         </div>
       </div>
-      <Link className="card__link" to={`product/${item.id}`}>
+      <Link state={item} className="card__link" to={`product/${item.id}`}>
         <span>
           Detail <i className="emoji-right">👉</i>
         </span>
@@ -33,4 +33,4 @@ const ProductCard = ({ item }) => {
   );
 };
 
-export default ProductCard;
+export default Product;

@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Main from './pages/main';
-import Detail from './pages/detail';
+import Products from './pages/Products';
+import ProductDetail from './pages/ProductDetail';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Main />,
+    element: <Products />,
   },
   {
     path: 'product/:id',
-    element: <Detail />,
+    element: <ProductDetail />,
   },
 ]);
 
