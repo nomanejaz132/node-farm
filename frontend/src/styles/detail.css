@@ -202,8 +202,7 @@ h1::before {
   line-height: 1.8;
 }
 
-.product__link:link,
-.product__link:visited {
+.product__link {
   display: block;
   background-color: #79e17b;
   color: white;
@@ -219,6 +218,9 @@ h1::before {
   align-items: center;
   justify-content: center;
   transition: all 0.3s;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .product__link:hover,

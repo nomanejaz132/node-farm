@@ -62,7 +62,7 @@ const ProductDetail = () => {
             {location.state.price} €
           </p>
         </div>
-        <a href="#42322" className="product__link">
+        <a className="product__link">
           <span className="emoji-left">🛒</span>
           <span>Add to shopping card {location.state.price} €</span>
         </a>
