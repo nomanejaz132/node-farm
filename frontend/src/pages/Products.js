@@ -1,9 +1,9 @@
-import React, { Suspense } from 'react';
-import Product from '../components/Product';
-import fetchData from '../utils/fetchData';
-import '../styles/main.css';
+import React, { Suspense } from "react";
+import Product from "../components/Product";
+import fetchData from "../utils/fetchData";
+import "../styles/main.css";
 
-const apiData = fetchData('http://127.0.0.1:5000/api');
+const apiData = fetchData("https://react-node-farm.herokuapp.com/api");
 
 const Products = () => {
   const data = apiData.read();

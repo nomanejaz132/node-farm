@@ -1,5 +1,5 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React from "react";
+import { useLocation } from "react-router-dom";
 
 const ProductDetail = () => {
   const location = useLocation();
@@ -58,7 +58,7 @@ const ProductDetail = () => {
             {location.state.quantity}
           </p>
           <p>
-            <span className="emoji-left">🏷</span>
+            <span className="emoji-left">🏷️</span>
             {location.state.price} €
           </p>
         </div>

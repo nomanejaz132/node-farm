@@ -1,33 +1,33 @@
-const url = require('url');
-const http = require('http');
-const fs = require('fs');
+const url = require("url");
+const http = require("http");
+const fs = require("fs");
 
-const data = fs.readFileSync(`${__dirname}/data.json`, 'utf-8');
+const data = fs.readFileSync(`${__dirname}/data.json`, "utf-8");
 const productsData = JSON.parse(data);
 
 const server = http.createServer((req, res) => {
   const headers = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'OPTIONS, POST, GET',
-    'Access-Control-Max-Age': 2592000,
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "OPTIONS, POST, GET",
+    "Access-Control-Max-Age": 2592000,
   };
 
   const pathname = req.url;
-  if (pathname === '/' || pathname === '/overview') {
-    res.end('This is an overview');
-  } else if (pathname === '/products') {
-    res.end('This is a products');
-  } else if (pathname === '/api') {
-    res.writeHead(200, headers, { 'Content-Type': 'application/json' });
+  if (pathname === "/" || pathname === "/overview") {
+    res.end("This is an overview");
+  } else if (pathname === "/products") {
+    res.end("This is a products");
+  } else if (pathname === "/api") {
+    res.writeHead(200, headers, { "Content-Type": "application/json" });
     res.end(data);
   } else {
     res.writeHead(404, {
-      'Content-Type': 'text/html',
+      "Content-Type": "text/html",
     });
-    res.end('<h1>404 Error!  Page Not Found</h1>');
+    res.end("<h1>404 Error!  Page Not Found</h1>");
   }
 });
 
-server.listen(5000, '127.0.0.1', () => {
-  console.log('Listening to requests on port 5000.');
+server.listen(process.env.PORT || 3000, () => {
+  console.log("Listening to requests on port 3000.");
 });
